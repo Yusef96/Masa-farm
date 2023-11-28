@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MasaFarms - Dashboard</title>
+  <meta name="theme-color" content="#8EC95B" />
+  <meta name="msapplication-navbutton-color" content="#8EC95B" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#8EC95B" />
+  <link rel="shortcut icon" href="/assets/icons/favicon.png" />
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
+
+  <link rel="stylesheet" href="/assets/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  <script src="/assets/js/swiper-bundle.min.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/chartjs.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script type="module" src="/assets/js/dashboard-main.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+  <div class="dashboard-body scroll">
+    <!-- <div class="test-mode">Test mode</div> -->
+    <!-- <div class="main-loader">
+        <img class="logo" src="/assets/new-img/masa-logo.png" alt="MasaFarms" />
+      </div> -->
+    <div class="side-navbar-container no-select">
+      <div class="side-navbar">
+        <img class="navbar-logo" src="/assets/new-img/masa-logo.png" alt="MasaFarms" />
+        <div class="nav-links scroll">
+          <a class="active"><img src="/assets/icons/new-home.png" alt="Home" /> <span>Home</span></a>
+          <a href="#"><img src="/assets/icons/new-tasks.png" alt="Tasks" /> <span>Tasks</span></a>
+          <a href="/dashboard/orders/"><img src="/assets/icons/new-orders.png" alt="Orders" /> <span>Orders</span></a>
+          <a href="/dashboard/added-accounts/"><img src="/assets/icons/accounts.png" alt="Accounts" /> <span>Added
+              Accounts</span></a>
+          <a href="/dashboard/reports/"><img src="/assets/icons/new-reports.png" alt="Reports" />
+            <span>Reports</span></a>
+        </div>
+        <!-- <div class="nav-links nav-bottom">
+            <a href="#"><img src="/assets/icons/new-settings.png" alt="Settings" /></a>
+          </div> -->
+      </div>
+    </div>
+
+    <div class="main-dashboard ">
+
+
+      <h1>Good morning, Abdelrahman!</h1>
+      <!-- Container with border radius and spacing -->
+
+      <!-- <div class="test-toaster">
+        <div class="toast-icon">
+          <img src="assets/new-img/confirm.png" alt="">
+        </div>
+        <div class="toast-content">
+          <h5>Update Successfully</h5>
+          <p>Your profile has been successfully updated</p>
+        </div>
+      </div> -->
+
+
+
+      <div id="lightBoxContainer" class="pop-screen">
+        <div id="lightBox">
+          <div class="form-container">
+            <div class="top-form">
+              <h4>Update Student</h4>
+              <img src="assets/new-img/x-mark.png" alt="" class="x-close">
+            </div>
+
+
+            <div class="form-row student-name ">
+              <div class="form-group between-labels">
+                <label for="firstName" class="prof-titles">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+              </div>
+            </div>
+
+       
+
+            <div class="form-row">
+              <div class="form-group between-labels">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+              </div>
+            </div>
+
+            
+            <div class="form-row">
+              <div class="form-group between-labels">
+                <label for="dob">Date of Birth:</label>
+                <div class="input-container">
+                  <input type="text" id="datepicker" placeholder="mm/dd/yyyy">
+                </div>              
+              </div>
+              <div class="form-group" id="poloki">
+                <label for="course">Course to Enroll:</label>
+                <select id="mySelect" style="width: 300px">
+                  <option value="1">Web Development</option>
+                  <option value="2">Mobile Application</option>
+                  <option value="3">Graphics Design</option>
+                </select>
+            
+              </div>
+            </div>
+
+            <!-- <div class="form-row">
+              <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <div class="input-container">
+                  <input type="text" id="datepicker" placeholder="mm/dd/yyyy">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row enrol-course ">
+              <div class="form-group">
+                <label for="course">Course to Enroll:</label>
+                <select id="course" name="course" required>
+                  <option value="math">Math</option>
+                  <option value="english">English</option>
+                  <option value="science">Science</option>
+                </select>
+              </div>
+            </div> -->
+
+
+            <div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault">
+                  <p>Use full name to display</p>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row buttons form-btn">
+              <button type="submit" class="sub-btn toast-pop">Submit</button>
+              <button type="reset" class="cancel-btn x-close">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <select class="js-example-basic-single" name="state">
+        <option value="AL">Alabama</option>
+          ...
+        <option value="WY">Wyoming</option>
+      </select> -->
+
+
+
+
+      <div class="table-container">
+        <!-- Table inside the container -->
+        <table class="main-table">
+          <tr>
+            <th>User</th>
+            <th>Ordered</th>
+            <th>Phone</th>
+            <th>Country</th>
+            <th>Last Order</th>
+            <th>Status</th>
+            <th><img src="/assets/new-img/horiz-dots.png" alt="" /></th>
+          </tr>
+          <tr>
+            <td>
+              <div class="table-user">
+                <img src="/assets/new-img/client-3.png" alt="" />
+                <div class="userinfo-table">
+                  <h6>John Larson</h6>
+                  <p>john@gmail.com</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="dollar-tabel">
+                <p>35,054.55</p>
+                <p class="grey-p">USD</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p table-tele">
+                <p>+01008998877</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p country">United State</div>
+            </td>
+            <td>
+              <div class="grey-p last-order">10 Feb 2020</div>
+            </td>
+            <td>
+              <p class="table-status-act">Active</p>
+            </td>
+            <td>
+              <img src="/assets/new-img/horiz-dots.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="table-user">
+                <img src="/assets/new-img/client-4.png" alt="" />
+                <div class="userinfo-table">
+                  <h6>Ashley Larson</h6>
+                  <p>john@gmail.com</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="dollar-tabel">
+                <p>35,054.55</p>
+                <p class="grey-p">USD</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p table-tele">
+                <p>+01008998877</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p">United Kindom</div>
+            </td>
+            <td>
+              <div class="grey-p">18 Feb 2020</div>
+            </td>
+            <td>
+              <p class="table-status-pend">Pending</p>
+            </td>
+            <td>
+              <img src="/assets/new-img/horiz-dots.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="table-user">
+                <img src="/assets/new-img/client-6.png" alt="" />
+                <div class="userinfo-table">
+                  <h6>John Larson</h6>
+                  <p>john@gmail.com</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="dollar-tabel">
+                <p>35,054.55</p>
+                <p class="grey-p">USD</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p table-tele">
+                <p>+01008998877</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p">Canada</div>
+            </td>
+            <td>
+              <div class="grey-p">10 Feb 2020</div>
+            </td>
+            <td>
+              <p class="table-status-susp">Suspend</p>
+            </td>
+            <td>
+              <img src="/assets/new-img/horiz-dots.png" alt="" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="table-user">
+                <img src="/assets/new-img/client-8.png" alt="" />
+                <div class="userinfo-table">
+                  <h6>John Larson</h6>
+                  <p>john@gmail.com</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="dollar-tabel">
+                <p>35,054.55</p>
+                <p class="grey-p">USD</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p table-tele">
+                <p>+01008998877</p>
+              </div>
+            </td>
+            <td>
+              <div class="grey-p">Egypt</div>
+            </td>
+            <td>
+              <div class="grey-p">10 Feb 2020</div>
+            </td>
+            <td>
+              <p class="table-status-inact">Inactive</p>
+            </td>
+            <td>
+              <img src="/assets/new-img/horiz-dots.png" alt="" />
+            </td>
+          </tr>
+          <!-- Add more rows and cells as needed -->
+        </table>
+      </div>
+
+
+
+      <div class="main-cards">
+        <div class="project-ind">
+          <h5>Users Card</h5>
+          <p>You have total 95 projects</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col card-user">
+            <div class="card">
+              <div class="top-card">
+                <img src="/assets/new-img/error.png" alt="" class="pointer" />
+                <img src="/assets/new-img/horiz-dots.png" alt="" class="pointer open-menu" />
+
+                <div class="pop-menu">
+                  <!-- Menu content goes here -->
+                  <ul>
+                    <li>
+                      <img src="assets/new-img/capture.png" alt="" class="menu-icons">
+                      <p>Quick View</p>
+                    </li>
+                    <li>
+                      <img src="assets/new-img/view.png" alt="" class="menu-icons">
+                      <p>View Details</p>
+                    </li>
+                    <li>
+                      <img src="assets/new-img/email.png" alt="" class="menu-icons">
+                      <p>Send Email</p>
+                    </li>
+                    <hr>
+                    <li>
+                      <img src="assets/new-img/rotation-lock.png" alt="" class="menu-icons">
+                      <p>Reset Pass</p>
+                    </li>
+                    <li>
+                      <img src="assets/new-img/shield.png" alt="" class="menu-icons">
+                      <p>Reset 2FA</p>
+                    </li>
+                    <li>
+                      <img src="assets/new-img/suspend.png" alt="" class="menu-icons">
+                      <p>Suspend User</p>
+                    </li>
+                  </ul>
+
+                </div>
+
+              </div>
+              <div class="card-body">
+                <div class="card-content">
+                  <img src="/assets/new-img/client-3.png" alt="" class="project-avatar" />
+                  <h6>Ashley Lawson</h6>
+                  <p class="grey-p">@ashley</p>
+                  <div class="text-center personality">
+                    <p>I am an UI/UX and love to be creative</p>
+                  </div>
+                  <div class="quantity">
+                    <div>
+                      <p class="black-p">213</p>
+                      <p class="grey-p">Projects</p>
+                    </div>
+                    <div class="sml-box">
+                      <p class="black-p">85.5%</p>
+                      <p class="grey-p">Performed</p>
+                    </div>
+                    <div>
+                      <p class="black-p">589</p>
+                      <p class="grey-p">Tasks</p>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-light view-profile">view profile</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="right-side ps-0">
+      <div class="main-right-container">
+        <div class="main-right scroll">
+          <div class="top-right-icons">
+            <img src="/assets/new-img/calendar.png" alt="" />
+            <img src="/assets/new-img/bell.png" alt="" class="common-btn" data-target="dropdown-not" />
+            <img src="/assets/new-img/message.png" alt="" class="common-btn" data-target="dropdown-msg" />
+            <img src="/assets/new-img/client-3.png" alt="" class="avatar-user common-btn" data-target="dropdown-menu" />
+          </div>
+          <div class="dropdown-menu menu-show">
+            <!-- Avatar and user name -->
+            <div class="user-info">
+              <img src="/assets/new-img/client-3.png" alt="" class="avatar-user" />
+              <span class="username">Abdelrahman Zaki</span>
+            </div>
+            <hr />
+            <!-- Account settings -->
+            <ul class="account-settings">
+              <li>
+                <img src="/assets/new-img/setting.png" alt="" />
+                <a href="#">Account Settings</a>
+              </li>
+            </ul>
+            <!-- Logout -->
+            <ul class="logout">
+              <li>
+                <img src="/assets/new-img/logout.png" alt="" />
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+          <!-- ............ -->
+          <div class="container dropdown-msg menu-show">
+            <div class="row clearfix">
+              <div class="col-lg-12">
+                <div class="card chat-app">
+                  <div id="plist" class="people-list">
+                    <p class="menu-title">Chat</p>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text inp-height"><i class="fa fa-search"></i></span>
+                      </div>
+                      <input type="text" class="form-control inp-height" placeholder="Search..." />
+                    </div>
+                    <ul class="list-unstyled chat-list mt-2 mb-0">
+                      <li class="clearfix">
+                        <img src="https://bootdey.com/new-img/Content/avatar/avatar1.png" alt="avatar" />
+                        <div class="about">
+                          <div class="name">Vincent Porter</div>
+                          <div class="status"><i class="fa fa-circle offline"></i> left 7 mins ago</div>
+                        </div>
+                      </li>
+                      <li class="clearfix active">
+                        <img src="https://bootdey.com/new-img/Content/avatar/avatar2.png" alt="avatar" />
+                        <div class="about">
+                          <div class="name">Aiden Chavez</div>
+                          <div class="status"><i class="fa fa-circle online"></i> online</div>
+                        </div>
+                      </li>
+                      <li class="clearfix">
+                        <img src="https://bootdey.com/new-img/Content/avatar/avatar3.png" alt="avatar" />
+                        <div class="about">
+                          <div class="name">Mike Thomas</div>
+                          <div class="status"><i class="fa fa-circle online"></i> online</div>
+                        </div>
+                      </li>
+                      <li class="clearfix">
+                        <img src="https://bootdey.com/new-img/Content/avatar/avatar7.png" alt="avatar" />
+                        <div class="about">
+                          <div class="name">Christian Kelly</div>
+                          <div class="status"><i class="fa fa-circle offline"></i> left 10 hours ago</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ........... -->
+          <div class="container dropdown-not menu-show">
+            <div class="row clearfix">
+              <div class="col-lg-12">
+                <div class="card chat-app">
+                  <div id="plist" class="not-menu">
+                    <div class="notif-label">
+                      <p class="menu-title">Notifications</p>
+                      <p class="menu-arrow">All (12)</p>
+                    </div>
+
+                    <hr />
+                    <ul>
+                      <li>
+                        <div class="not-top">
+                          <p>General (3)</p>
+                          <img src="/assets/new-img/next.png" alt="" />
+                        </div>
+                        <div class="all-noti">
+                          <div class="not-details">
+                            <div class="error">
+                              <img src="/assets/new-img/error.png" alt="" />
+                              <p>Payment unsuccessful</p>
+                            </div>
+                            <p>Just now</p>
+                          </div>
+                          <div class="not-cont">
+                            <p>Your payment did not go through for visa ending in 2565</p>
+                            <p class="Priority">High Priority</p>
+                          </div>
+                        </div>
+                      </li>
+                      <hr />
+                      <li>
+                        <div class="not-top">
+                          <p>Support (8)</p>
+                          <img src="/assets/new-img/next.png" alt="" />
+                        </div>
+                        <div class="all-noti">
+                          <div class="not-details">
+                            <div class="error">
+                              <img src="/assets/new-img/error.png" alt="" />
+                              <p>support #1246</p>
+                            </div>
+                            <p>Just now</p>
+                          </div>
+                          <div class="not-cont">
+                            <p>Lorem ipsum dolor sit amet consectse architecto.</p>
+                          </div>
+                        </div>
+                      </li>
+                      <hr />
+                      <li>
+                        <div class="not-top">
+                          <p>Policies (15)</p>
+                          <img src="/assets/new-img/next.png" alt="" />
+                        </div>
+                        <div class="all-noti">
+                          <div class="not-details">
+                            <div class="error">
+                              <img src="/assets/new-img/error.png" alt="" />
+                              <p>Details outstanding</p>
+                            </div>
+                            <p>Just now</p>
+                          </div>
+                          <div class="not-cont">
+                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            <p class="Priority">High Priority</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ............ -->
+          <div class="right-mid">
+            <div class="info-status">
+              <h5>Target progress</h5>
+              <p>In progress</p>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-label="Success example" aria-valuenow="80"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-text number">48%</div>
+              </div>
+              <div class="estimate">
+                <p>Estimated achievement</p>
+                <p class="number" id="business-days">4-5 business days</p>
+              </div>
+            </div>
+
+            <div class="top-product center">
+              <h5 id="juice-Num">Top products <span class="number">(3)</span></h5>
+              <div class="preview-juices">
+                <div class="prev-juice">
+                  <img src="/assets/new-img/prev.png" alt="" class="prv-juice" />
+                </div>
+                <div class="next-juice">
+                  <img src="/assets/new-img/next.png" alt="" class="nxt-juice" />
+                </div>
+              </div>
+              <div class="orders-info">
+                <div class="swiper-juice">
+                  <div class="swiper-wrapper" id="top-juice"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
